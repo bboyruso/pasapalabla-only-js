@@ -284,7 +284,6 @@ let players = [
 ];
 
 const playGame = () => {
-  ////////////////
 
   const randomQuestionsID = Math.floor(Math.random() * 3);
 
@@ -362,8 +361,7 @@ terminar el juego en cualquier momento, escribe "END".
     console.log(results);
     alert(results);
   };
-
-  ////////////////////
+  
   const playAgain = () => {
     const message = window.confirm("Queres jugar otra vez?");
     if (message) {
