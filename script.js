@@ -339,7 +339,7 @@ terminar el juego en cualquier momento, escribe "END".
         } else {
           showQuestion();
         }
-      } else if (answer.toLowerCase() === "pasaparabla") {
+      } else if (answer.toLowerCase() === "pasapalabla") {
         questionIndex++;
         showQuestion();
       } else if (answer.toUpperCase() === "END") {
