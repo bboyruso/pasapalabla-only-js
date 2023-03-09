@@ -284,15 +284,16 @@ let players = [
 ];
 
 const playGame = () => {
+  ////////////////
 
   const randomQuestionsID = Math.floor(Math.random() * 3);
 
   const askName = () => {
     const name = window.prompt(`Cual es su nombre o nickname?`);
     if (name === null) {
-      askName();
+      return askName();
     } else if (name.length < 1) {
-      askName();
+      return askName();
     } else if (name.length > 0) {
       alert(
         `Bienvenido/a ${name}! 
@@ -318,7 +319,12 @@ terminar el juego en cualquier momento, escribe "END".
       const answer = window.prompt(
         questions[questionIndex].question[randomQuestionsID]
       );
-      if (
+      if (answer === null) {
+        alert(
+          `Responda la pregunta o puede introducir "pasapalabra" para saltar a la seguente.`
+        );
+        return showQuestion();
+      } else if (
         answer.toLowerCase() ===
         questions[questionIndex].answer[randomQuestionsID].toLowerCase()
       ) {
@@ -361,7 +367,8 @@ terminar el juego en cualquier momento, escribe "END".
     console.log(results);
     alert(results);
   };
-  
+
+  ////////////////////
   const playAgain = () => {
     const message = window.confirm("Queres jugar otra vez?");
     if (message) {
