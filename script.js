@@ -1,6 +1,6 @@
 let players = [
   {
-    name: "Lidia99",
+    name: "David20",
     incorrectAnswer: 12,
     corectAnswer: 9,
   },
@@ -311,11 +311,7 @@ terminar el juego en cualquier momento, escribe "END".
   let questionIndex = 0;
 
   const showQuestion = () => {
-    console.log(questions.length + " lenght");
-    console.log(questionIndex + " Index");
-
     if (questionIndex > questions.length - 1) {
-      console.log("reset round");
       questionIndex = 0;
       return showQuestion();
     }
@@ -328,23 +324,19 @@ terminar el juego en cualquier momento, escribe "END".
           `Responda la pregunta ! 
     puede introducir : 
     "pasapalabra" para saltar a la seguente pregunta.
-    "END para terminar el juego."`
+    "END" para terminar el juego."`
         );
         showQuestion();
       } else if (
         answer.toLowerCase() ===
         questions[questionIndex].answer[randomQuestionsID].toLowerCase()
       ) {
-        console.log("Correcto!!!");
-        console.log(questionIndex);
         questions.splice(questionIndex, 1);
         corectAnswer++;
         if (questions.length === 0) {
-          console.log("ronda terminada");
           showResults();
           playAgain();
         } else {
-          console.log("mostrando siguente pregunta");
           showQuestion();
         }
       } else if (answer.toLowerCase() === "pasaparabla") {
@@ -358,10 +350,14 @@ terminar el juego en cualquier momento, escribe "END".
         answer.toLowerCase() !==
         questions[questionIndex].answer[randomQuestionsID].toLowerCase()
       ) {
-        console.log("Nooooo!!!");
-        questionIndex++;
+        questions.splice(questionIndex, 1);
         incorrectAnswer++;
-        showQuestion();
+        if (questions.length === 0) {
+          showResults();
+          playAgain();
+        } else {
+          showQuestion();
+        }
       }
     }
   };
