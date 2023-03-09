@@ -25,7 +25,7 @@ const playGame = () => {
     },
     {
       letter: "b",
-      answer: ["bingo", " Bombardino", "Boligrafo"],
+      answer: ["bingo", "Bombardino", "Boligrafo"],
       status: 0,
       question: [
         "CON LA B. Juego que ha sacado de quicio a todos los 'Coders' en las sesiones de precurso",
