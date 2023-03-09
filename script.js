@@ -331,6 +331,7 @@ terminar el juego en cualquier momento, escribe "END".
         answer.toLowerCase() ===
         questions[questionIndex].answer[randomQuestionsID].toLowerCase()
       ) {
+        console.log("YES");
         questions.splice(questionIndex, 1);
         corectAnswer++;
         if (questions.length === 0) {
@@ -350,6 +351,7 @@ terminar el juego en cualquier momento, escribe "END".
         answer.toLowerCase() !==
         questions[questionIndex].answer[randomQuestionsID].toLowerCase()
       ) {
+        console.log("NO");
         questions.splice(questionIndex, 1);
         incorrectAnswer++;
         if (questions.length === 0) {
